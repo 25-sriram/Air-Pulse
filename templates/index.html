@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AirFare Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<nav><div class="brand"><b>✈ Air</b><span>Pulse</span><small>INDIA DOMESTIC AIRFARE ANALYTICS</small></div>
+<div class="online">☆☆☆☆☆</div></nav>
+<main>
+<section class="hero"><div><label>REAL-TIME AIRFARE MONITOR</label>
+<h1>Track the pulse of<br><em>Indian airfares.</em></h1>
+<p>DGCA-weighted price intelligence, route analytics and ML-based future fare predictions.</p></div>
+<div class="plane">✈</div></section>
+
+<section class="cards">
+<div class="card"><i>₹</i><div><small>AVERAGE MARKET FARE</small><h2 id="avg">—</h2></div></div>
+<div class="card"><i>◈</i><div><small>PRICE INDEX</small><h2 id="idx">—</h2></div></div>
+<div class="card"><i>✈</i><div><small>ROUTES TRACKED</small><h2 id="routes">—</h2></div></div>
+<div class="card"><i>AI</i><div><small>ML PREDICTIONS</small><h2 id="preds">—</h2></div></div>
+</section>
+
+<section class="twocol">
+<div class="panel"><header><div><label>MARKET INDEX</label><h3>Airfare Price Index</h3></div><span>T+30 = 100</span></header><canvas id="indexChart"></canvas></div>
+<div class="panel"><header><div><label>ROUTE ANALYTICS</label><h3>Average Fare by Route</h3></div></header><canvas id="routeChart"></canvas></div>
+</section>
+
+<div class="panel"><header><div><label>LEAD-TIME INTELLIGENCE</label><h3>Fare Heatmap</h3></div></header><div id="heatmap" class="heatmap"></div></div>
+
+<section class="twocol">
+<div class="panel"><header><div><label>BOOKING WINDOW</label><h3>Lead-Time Fare Curve</h3></div></header><canvas id="leadChart"></canvas></div>
+<div class="panel"><header><div><label>MACHINE LEARNING</label><h3>Future Fare Prediction</h3></div>
+<select id="routeSelect"><option value="">All routes</option></select></header><div id="predictionList"></div></div>
+</section>
+
+<div class="panel"><header><div><label>DECISION SUPPORT</label><h3>Booking Recommendations</h3></div></header><div id="recommendations" class="recs"></div></div>
+<footer>AirFare Intelligence • IGNAV • DGCA • MySQL • Machine Learning</footer>
+</main>
+<script src="{{ url_for('static',filename='dashboard.js') }}"></script>
+</body></html>
